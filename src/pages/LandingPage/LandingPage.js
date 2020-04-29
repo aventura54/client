@@ -1,7 +1,13 @@
 import React from "react";
 
+import { Container, Typography } from "@material-ui/core";
+
 const LandingPage = () => {
-  return <div>Landing Page works</div>;
+  return (
+    <Container>
+      <Typography variant="h3">LandingPage Works!!!</Typography>
+    </Container>
+  );
 };
 
 export default LandingPage;
