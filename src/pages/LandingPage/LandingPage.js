@@ -5,12 +5,11 @@ import {
   Typography,
   AppBar,
   Toolbar,
-  IconButton,
   Button,
-  ButtonBase,
   Grid,
+  Divider,
+  Icon,
 } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
 
 import "./LandingPage.scss";
 
@@ -32,8 +31,11 @@ const LandingPage = () => {
             <Button color="inherit" href="#steps">
               Etapas
             </Button>
-            <Button color="inherit" href="#contact">
-              Contato
+            <Button color="inherit" href="#plans">
+              Planos
+            </Button>
+            <Button color="inherit" href="#start">
+              Começar
             </Button>
             <div style={{ flex: 1 }}></div>
             <Button variant="outlined" color="inherit">
@@ -43,22 +45,23 @@ const LandingPage = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <section id="home" style={{ position: "relative" }}>
+      <section id="home" className="full-size" style={{ position: "relative" }}>
         <img
-          className="full-size"
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "cover", width: "100%", height: "100vh" }}
           src={`${process.env.PUBLIC_URL}/assets/images/banner.png`}
         />
-        <div style={{ position: "absolute", right: "20%", top: "40%" }}>
-          <Typography style={{ color: "#fff" }} variant="h2">
-            <strong>Onganize</strong>
-          </Typography>
-          <Typography style={{ color: "#fff" }} variant="h2">
-            <strong>Invista</strong>
-          </Typography>
-          <Typography color="primary" variant="h2">
-            <strong>Prospere</strong>
-          </Typography>
+        <div style={{ position: "absolute", width: "100%", top: "40%" }}>
+          <Container style={{ textAlign: "right" }}>
+            <Typography style={{ color: "#fff" }} variant="h2">
+              <strong>Onganize</strong>
+            </Typography>
+            <Typography style={{ color: "#fff" }} variant="h2">
+              <strong>Invista</strong>
+            </Typography>
+            <Typography color="primary" variant="h2">
+              <strong>Prospere</strong>
+            </Typography>
+          </Container>
         </div>
       </section>
       <section id="how" className="full-size">
@@ -139,9 +142,11 @@ const LandingPage = () => {
         className="full-size"
         style={{ backgroundColor: "#695F5F" }}
       >
-        <Container style={{ display: "flex", flexDirection: "column" }}>
-          <Grid container>
-            <Grid xs={12} sm={12} md={6} className="steps-left">
+        <Container
+          style={{ display: "flex", flex: 1, flexDirection: "column" }}
+        >
+          <Grid container style={{ flex: 1 }}>
+            <Grid xs={12} sm={12} md={4} className="steps-left">
               <Typography variant="h2" style={{ color: "#fff" }}>
                 <strong>
                   os{" "}
@@ -152,10 +157,155 @@ const LandingPage = () => {
                 </strong>
               </Typography>
             </Grid>
-            <Grid xs={12} sm={12} md={6} className="steps-right"></Grid>
+            <Grid
+              xs={12}
+              sm={12}
+              md={8}
+              className="steps-right"
+              style={{ display: "flex", padding: "100px 0" }}
+            >
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/images/steps_holder.png`}
+              />
+              <div className="steps-texts">
+                <Typography variant="h3">
+                  <strong>
+                    <Typography variant="span" className="badge">
+                      1.
+                    </Typography>
+                    Crie sua conta e defina seu perfil
+                  </strong>
+                </Typography>
+                <Typography variant="h3">
+                  <strong>
+                    <Typography variant="span" className="badge">
+                      2.
+                    </Typography>
+                    Crie sua conta e defina seu perfil
+                  </strong>
+                </Typography>
+                <Typography variant="h3">
+                  <strong>
+                    <Typography variant="span" className="badge">
+                      3.
+                    </Typography>
+                    Crie sua conta e defina seu perfil
+                  </strong>
+                </Typography>
+              </div>
+            </Grid>
           </Grid>
         </Container>
       </section>
+      <section id="plans" className="full-size">
+        <Container style={{ display: "flex", flexDirection: "column" }}>
+          <Typography variant="h2" style={{ textAlign: "center" }}>
+            <strong>planos</strong>
+          </Typography>
+          <div
+            style={{
+              display: "flex",
+              flex: 1,
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Grid container>
+              <Grid xs={12} sm={12} md={4} className="grid-card">
+                <div className="card">
+                  <Typography variant="h3">
+                    <strong>GRÁTIS</strong>
+                  </Typography>
+                  <Divider />
+                  <Typography variant="h5">
+                    <strong>dslad aslkdjas ldjsaldj</strong>
+                  </Typography>
+                  <Typography variant="h5" style={{ color: "#979797" }}>
+                    <strong>dslad aslkdjas ldjsaldj</strong>
+                  </Typography>
+                  <Typography variant="h5" style={{ color: "#979797" }}>
+                    <strong>dslad aslkdjas ldjsaldj</strong>
+                  </Typography>
+                  <Divider />
+                </div>
+              </Grid>
+              <Grid xs={12} sm={12} md={4} className="grid-card">
+                <div className="card">
+                  <Typography variant="h3">
+                    <strong>R$ 49,90</strong>
+                  </Typography>
+                  <Divider />
+                  <Typography variant="h5">
+                    <strong>dslad aslkdjas ldjsaldj</strong>
+                  </Typography>
+                  <Typography variant="h5">
+                    <strong>dslad aslkdjas ldjsaldj</strong>
+                  </Typography>
+                  <Typography variant="h5" style={{ color: "#979797" }}>
+                    <strong>dslad aslkdjas ldjsaldj</strong>
+                  </Typography>
+                  <Divider />
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    endIcon={<Icon>keyboard_arrow_right</Icon>}
+                  >
+                    Assinar
+                  </Button>
+                </div>
+              </Grid>
+              <Grid xs={12} sm={12} md={4} className="grid-card">
+                <div className="card">
+                  <Typography variant="h3">
+                    <strong>R$ 79,90</strong>
+                  </Typography>
+                  <Divider />
+                  <Typography variant="h5">
+                    <strong>dslad aslkdjas ldjsaldj</strong>
+                  </Typography>
+                  <Typography variant="h5">
+                    <strong>dslad aslkdjas ldjsaldj</strong>
+                  </Typography>
+                  <Typography variant="h5">
+                    <strong>dslad aslkdjas ldjsaldj</strong>
+                  </Typography>
+                  <Divider />
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    endIcon={<Icon>keyboard_arrow_right</Icon>}
+                  >
+                    Assinar
+                  </Button>
+                </div>
+              </Grid>
+            </Grid>
+          </div>
+        </Container>
+      </section>
+      <section
+        id="start"
+        className="full-size"
+        style={{ backgroundColor: "#5ac1ac" }}
+      >
+        <Container style={{ display: "flex", flexDirection: "column" }}>
+          <Grid className="start-grid" container>
+            <Grid xs={12} sm={12} md={6} className="start-card">
+              <Typography variant="h1">
+                <strong>comece a investir agora :)</strong>
+              </Typography>
+            </Grid>
+            <Grid xs={12} sm={12} md={6} className="start-card">
+              <Button variant="contained" className="start-btn">
+                Começar
+              </Button>
+            </Grid>
+          </Grid>
+        </Container>
+      </section>
+      <div className="footer">
+        <Typography variant="body1">Futurus | 2020</Typography>
+      </div>
     </>
   );
 };
