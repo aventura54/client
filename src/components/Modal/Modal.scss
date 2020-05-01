@@ -1,0 +1,44 @@
+.block-wrap-social-media {
+  > div {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.image-login-modal {
+  width: 100%;
+  height: 100%;
+}
+
+.divider {
+  font-family: "Roboto", sans-serif;
+  width: 75%;
+  height: 20px;
+  border-bottom: 1px solid #999999;
+  text-align: center;
+  margin-bottom: 20px;
+  &-text {
+    padding-top: 10px;
+    font-size: 24px;
+    color: #999999;
+    background-color: white;
+    padding: 0 10px;
+  }
+}
+.input-container {
+  font-family: "Roboto", sans-serif;
+  width: 75%;
+  margin-bottom: 40px;
+}
+
+.MuiInput-underline:before {
+  border-bottom: 2px solid #5ac1ac !important;
+}
+
+.button-acessar {
+  font-family: "Roboto", sans-serif;
+  width: 75%;
+  border-radius: 50px !important;
+  text-transform: lowercase !important;
+  font-size: 24px;
+}

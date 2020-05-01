@@ -11,10 +11,15 @@ import {
   Grid,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-
+import Modal from "../../components/Modal/Modal";
 import "./LandingPage.scss";
 
 const LandingPage = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <>
       <AppBar position="fixed">
@@ -39,8 +44,11 @@ const LandingPage = () => {
             <Button variant="outlined" color="inherit">
               Crie sua conta
             </Button>
-            <Button color="inherit">Login</Button>
+            <Button color="inherit" onClick={toggleModal}>
+              Login
+            </Button>
           </Toolbar>
+          <Modal open={isModalOpen} handleClose={() => setIsModalOpen(false)} />
         </Container>
       </AppBar>
       <section id="home" style={{ position: "relative" }}>
