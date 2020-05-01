@@ -1,9 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import { Modal, Grid, TextField, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import SocialMediaButton from "../buttons/socialMediaButton/socialMediaButton";
 import "./Modal.scss";
 
@@ -19,10 +17,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const imageLeft = (
+  <img
+    className="image-login-modal"
+    alt="futurus"
+    src={`${process.env.PUBLIC_URL}/assets/images/esquerda-login.png`}
+  />
+);
+
+const socialMediaButtons = (
+  <>
+    <SocialMediaButton google={true} />
+    <SocialMediaButton />
+  </>
+);
+
+const divider = (
+  <div className="divider">
+    <span className="divider-text">ou</span>
+  </div>
+);
+
+const inputFields = (
+  <div className="input-container">
+    <TextField fullWidth id="user-email" label="email" />
+    <TextField fullWidth id="user-pwd" type="password" label="senha" />
+  </div>
+);
+
+const buttonAcessar = (
+  <Link to="/organizacao" style={{ textDecoration: "none", width: "100%" }}>
+    <Button className="button-acessar" variant="contained" color="primary">
+      acessar
+    </Button>
+  </Link>
+);
 export default function SimpleModal({ open, handleClose }) {
   const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
-
   const modalStyle = {
     display: "flex",
     alignItems: "center",
@@ -35,13 +66,8 @@ export default function SimpleModal({ open, handleClose }) {
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <Grid item xs={6}>
-        <img
-          className="image-login-modal"
-          alt="futurus"
-          src={`${process.env.PUBLIC_URL}/assets/images/esquerda-login.png`}
-        />
+        {imageLeft}
       </Grid>
-      {/* <h2 id="simple-modal-title">Text in a modal</h2> */}
       <Grid item xs={6}>
         <div class="block-wrap-social-media">
           <Grid
@@ -50,23 +76,11 @@ export default function SimpleModal({ open, handleClose }) {
             justify="flex-start"
             alignItems="center"
           >
-            <SocialMediaButton google={true} />
-            <SocialMediaButton />
+            {socialMediaButtons}
 
-            <div className="divider">
-              <span className="divider-text">ou</span>
-            </div>
-            <div className="input-container">
-              <TextField fullWidth id="user-email" label="email" />
-              <TextField fullWidth id="user-pwd" label="senha" />
-            </div>
-            <Button
-              className="button-acessar"
-              variant="contained"
-              color="primary"
-            >
-              acessar
-            </Button>
+            {divider}
+            {inputFields}
+            {buttonAcessar}
           </Grid>
         </div>
       </Grid>

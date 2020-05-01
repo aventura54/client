@@ -2,7 +2,7 @@ import React from "react";
 import "./socialMediaButton.scss";
 export default function socialMediaButton({ google = false }) {
   const googleButton = (
-    <a class="btn-google" href="">
+    <a class="btn-google" href="#">
       <div class="google-content">
         <div class="logo">
           <img
@@ -16,7 +16,7 @@ export default function socialMediaButton({ google = false }) {
   );
 
   const fbButton = (
-    <a class="btn-fb" href="">
+    <a class="btn-fb" href="#">
       <div class="fb-content">
         <div class="logo">
           <svg
