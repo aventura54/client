@@ -53,7 +53,7 @@ const LandingPage = () => {
         <div style={{ position: "absolute", width: "100%", top: "40%" }}>
           <Container style={{ textAlign: "right" }}>
             <Typography style={{ color: "#fff" }} variant="h2">
-              <strong>Onganize</strong>
+              <strong>Organize</strong>
             </Typography>
             <Typography style={{ color: "#fff" }} variant="h2">
               <strong>Invista</strong>
