@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import LandingPage from "./pages/LandingPage/LandingPage";
 import OrganizacaoPage from "./pages/OrganizacaoPage/OrganizacaoPage";
+import FeedPage from "./pages/FeedPage/FeedPage";
 import PlanilhaPage from "./pages/PlanilhaPage/PlanilhaPage";
 import QuantoInvestir from "./pages/OrganizacaoPage/QuantoInvestir/QuantoInvestir";
 import SliderPage from "./pages/OrganizacaoPage/Slider-page/Slider-page";
@@ -34,6 +35,8 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <Router>
         <Switch>
+          <Route path="/quanto-investir" component={QuantoInvestir} />
+          <Route path="/feed" component={FeedPage} />
           <Route path="/planilha" component={PlanilhaPage} />
           <Route path="/quanto-investir" component={QuantoInvestir} />
           <Route path="/slider-investimento" component={SliderPage} />
