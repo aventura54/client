@@ -15,9 +15,7 @@ import "./OrganizacaoPage.scss";
 const renderIcon = () => (
   <div className="section-icon">
     <Link to="/" style={{ textDecoration: "none", width: "100%" }}>
-      <IconButton>
-        <BackIcon className="back-icon" />
-      </IconButton>
+      <BackIcon className="back-icon" />
     </Link>
   </div>
 );
