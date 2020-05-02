@@ -19,6 +19,7 @@ const LandingPage = () => {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
   return (
     <>
       <AppBar position="fixed">
