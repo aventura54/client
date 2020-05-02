@@ -17,20 +17,14 @@ import "./PlanilhaPage.scss";
 export default class PlanilhaPage extends React.Component {
 
   state = {
-    listRendas: [
-      {
-        id: Date.now(),
-        tipo: 'Salário',
-        valor: 4500
-      }
-    ],
+    listRendas: [],
     listGastos: [],
     inputRendaTipo: null,
     inputRendaValor: null,
     inputGastoTipo: null,
     inputGastoValor: null,
     isNovaRendaVisible: false,
-    isNovaGastoVisible: false,
+    isNovoGastoVisible: false,
   }
 
   renderIcon = () => (
@@ -48,6 +42,10 @@ export default class PlanilhaPage extends React.Component {
       </Typography>
     </div>
   );
+
+  /**
+   * RENDAS
+   */
 
   renderMinhasRendas = () => {
     return this.state.listRendas.map((renda) => (
@@ -152,14 +150,116 @@ export default class PlanilhaPage extends React.Component {
     </div>
   );
 
+  /**
+   * GASTOS
+   */
+
+  renderMeusGastos = () => {
+    return this.state.listGastos.map((gasto) => (
+      <div className="gasto" key={gasto.id}>
+        <Typography className="tipo-label" variant="body">
+          {gasto.tipo}
+        </Typography>
+        <Typography className="valor-label" variant="body">
+          R$ {gasto.valor}
+        </Typography>
+        <IconButton className="botao-editar">
+          <EditIcon
+            className="botao-editar-icon"
+            onClick={() => {
+
+              if (this.state.isNovoGastoVisible) {
+                return;
+              }
+
+              this.setState({
+                ...this.state,
+                inputGastoTipo: gasto.tipo,
+                inputGastoValor: gasto.valor,
+                isNovoGastoVisible: true,
+                listGastos: this.state.listGastos.filter(g => g.id !== gasto.id),
+              });
+            }}
+          />
+        </IconButton>
+      </div>
+    ))
+  }
+
+  renderNovoGasto = () => {
+
+    if (!this.state.isNovoGastoVisible) {
+      return;
+    }
+
+    return (
+      <div className="novo-gasto">
+        <TextField
+          id="novo-gasto-tipo"
+          className="input-conteudo"
+          label="Tipo de gasto"
+          variant="outlined"
+          value={this.state.inputGastoTipo}
+          onChange={e => this.setState({ ...this.state, inputGastoTipo: e.target.value })}
+          size="small"
+        />
+        <TextField
+          id="novo-gasto-valor"
+          className="input-conteudo"
+          label="Valor (R$)"
+          variant="outlined"
+          InputProps={{ type: 'number' }}
+          value={this.state.inputGastoValor}
+          onChange={e => this.setState({ ...this.state, inputGastoValor: e.target.value })}
+          size="small"
+        />
+        <IconButton className="botao-confirmar">
+          <CheckIcon
+            className="botao-confirmar-icon"
+            onClick={() => {
+
+              const gastoTipo = this.state.inputGastoTipo;
+              const gastoValor = this.state.inputGastoValor;
+
+              if (!gastoTipo || !gastoValor) {
+                return;
+              }
+
+              this.setState({
+                ...this.state,
+                listGastos: [
+                  ...this.state.listGastos,
+                  {
+                    id: Date.now(),
+                    tipo: gastoTipo,
+                    valor: gastoValor
+                  }
+                ],
+                inputGastoTipo: null,
+                inputGastoValor: null,
+                isNovoGastoVisible: false
+              })
+            }}
+          />
+        </IconButton>
+      </div>
+    );
+  }
+
   renderSectionGastos = () => (
     <div className="section-meus-gastos">
+      <Typography className="title" variant="h4">
+        meus gastos (mensal)
+      </Typography>
+      {this.renderMeusGastos()}
+      {this.renderNovoGasto()}
+      <Button id="adicionar-gasto" color="primary" onClick={() => this.setState({ ...this.state, isNovoGastoVisible: true })}>Adicionar +</Button>
     </div>
   );
 
   renderButtons = () => (
     <div className="section-buttons">
-      <Link to="/" style={{ textDecoration: "none" }}>
+      <Link to="/quanto-investir" style={{ textDecoration: "none" }}>
         <Button
           className="button button-exit"
           color="secondary"
@@ -168,9 +268,12 @@ export default class PlanilhaPage extends React.Component {
           Agora não
         </Button>
       </Link>
-      <Button className="button button-next" color="primary" variant="contained">
-        Vamos lá
+
+      <Link to="/quanto-investir" style={{ textDecoration: "none" }}>
+        <Button className="button button-next" color="primary" variant="contained">
+          Próximo
       </Button>
+      </Link>
     </div>
   );
 

@@ -45,9 +45,11 @@ const renderButtons = () => (
         Agora não
       </Button>
     </Link>
-    <Button className="button button-next" color="primary" variant="contained">
-      Vamos lá
+    <Link to="/planilha" style={{ textDecoration: "none" }}>
+      <Button className="button button-next" color="primary" variant="contained">
+        Vamos lá
     </Button>
+    </Link>
   </div>
 );
 

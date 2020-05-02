@@ -1,17 +1,27 @@
 $primary-color: #5AC1AC;
 
 .planilha-container {
+  min-height: 98vh;
 
   .section-icon {
-    flex: 1;
+    height: 150px;
     display: flex;
     align-items: center;
   }
 
-  .section-content {
+  .section-header {
     flex: 1;
     display: flex;
     flex-direction: column;
+  }
+
+  .section-minhas-rendas {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .section-meus-gastos {
+    flex: 1;
   }
 
   .section-buttons {
@@ -19,6 +29,7 @@ $primary-color: #5AC1AC;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    margin-bottom: 10px;
   }
 
   .back-icon {
@@ -54,10 +65,13 @@ $primary-color: #5AC1AC;
     }
   }
 
+  #adicionar-gasto,
   #adicionar-renda {
     padding-left: 0;
   }
 
+  .novo-gasto,
+  .gasto,
   .nova-renda,
   .renda {
     max-width: 450px;
