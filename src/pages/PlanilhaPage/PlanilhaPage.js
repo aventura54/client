@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import BackIcon from "@material-ui/icons/KeyboardBackspace";
 import EditIcon from '@material-ui/icons/Edit';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CheckIcon from '@material-ui/icons/Check';
 import "./PlanilhaPage.scss";
 
 export default class PlanilhaPage extends React.Component {
@@ -21,7 +21,7 @@ export default class PlanilhaPage extends React.Component {
       {
         id: Date.now(),
         tipo: 'Salário',
-        valor: 'R$ 4.500,00'
+        valor: 4500
       }
     ],
     listGastos: [],
@@ -52,14 +52,30 @@ export default class PlanilhaPage extends React.Component {
   renderMinhasRendas = () => {
     return this.state.listRendas.map((renda) => (
       <div className="renda" key={renda.id}>
-        <Typography className="tipo-renda" variant="body">
+        <Typography className="tipo-label" variant="body">
           {renda.tipo}
         </Typography>
-        <Typography className="valor-renda" variant="body">
-          {renda.valor}
+        <Typography className="valor-label" variant="body">
+          R$ {renda.valor}
         </Typography>
-        <IconButton>
-          <EditIcon className="botao-editar-renda" />
+        <IconButton className="botao-editar">
+          <EditIcon
+            className="botao-editar-icon"
+            onClick={() => {
+
+              if (this.state.isNovaRendaVisible) {
+                return;
+              }
+
+              this.setState({
+                ...this.state,
+                inputRendaTipo: renda.tipo,
+                inputRendaValor: renda.valor,
+                isNovaRendaVisible: true,
+                listRendas: this.state.listRendas.filter(r => r.id !== renda.id),
+              });
+            }}
+          />
         </IconButton>
       </div>
     ))
@@ -75,26 +91,34 @@ export default class PlanilhaPage extends React.Component {
       <div className="nova-renda">
         <TextField
           id="nova-renda-tipo"
+          className="input-conteudo"
           label="Tipo de renda"
           variant="outlined"
+          value={this.state.inputRendaTipo}
           onChange={e => this.setState({ ...this.state, inputRendaTipo: e.target.value })}
           size="small"
         />
         <TextField
           id="nova-renda-valor"
+          className="input-conteudo"
           label="Valor (R$)"
           variant="outlined"
           InputProps={{ type: 'number' }}
+          value={this.state.inputRendaValor}
           onChange={e => this.setState({ ...this.state, inputRendaValor: e.target.value })}
           size="small"
         />
-        <IconButton>
-          <CheckCircleIcon
-            className="check-circle-icon"
+        <IconButton className="botao-confirmar">
+          <CheckIcon
+            className="botao-confirmar-icon"
             onClick={() => {
 
               const rendaTipo = this.state.inputRendaTipo;
               const rendaValor = this.state.inputRendaValor;
+
+              if (!rendaTipo || !rendaValor) {
+                return;
+              }
 
               this.setState({
                 ...this.state,
@@ -103,7 +127,7 @@ export default class PlanilhaPage extends React.Component {
                   {
                     id: Date.now(),
                     tipo: rendaTipo,
-                    valor: `R$ ${rendaValor}`
+                    valor: rendaValor
                   }
                 ],
                 inputRendaTipo: null,
