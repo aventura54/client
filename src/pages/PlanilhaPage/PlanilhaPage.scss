@@ -1,0 +1,60 @@
+$primary-color: #5AC1AC;
+
+.planilha-container {
+
+  .section-icon {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .section-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-buttons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .back-icon {
+    background: $primary-color;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 60px !important; 
+  }
+  
+  .title {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    height: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 16px;
+    box-shadow: none;
+
+    &-next {
+    }
+
+    &-exit {
+      color: $primary-color;
+      background: #fff;
+      border: 2px solid $primary-color;
+
+      &:hover {
+        background: #fff;
+      }
+    }
+  }
+
+  #adicionar-renda {
+    padding-left: 0;
+  }
+}
