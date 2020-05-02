@@ -14,6 +14,11 @@ import "./QuantoInvestir.scss";
 const QuantoInvestir = () => {
   const [valueInput, setValueInput] = React.useState("");
 
+  const setLocal = (value) => {
+    setValueInput(value);
+    localStorage.setItem("valor", value);
+  };
+
   const renderIcon = () => (
     <div className="section-icon">
       <Link to="/organizacao" style={{ textDecoration: "none", width: "100%" }}>
@@ -30,7 +35,7 @@ const QuantoInvestir = () => {
       <div className="input-container">
         <TextField
           value={valueInput}
-          onChange={(e) => setValueInput(e.target.value)}
+          onChange={(e) => setLocal(e.target.value)}
           fullWidth
           autoFocus
           type="number"
@@ -53,14 +58,16 @@ const QuantoInvestir = () => {
           Agora não
         </Button>
       </Link>
-      <Button
-        disabled={valueInput ? false : true}
-        className="button button-next"
-        color="primary"
-        variant="contained"
-      >
-        Vamos lá
-      </Button>
+      <Link to="/slider-investimento" style={{ textDecoration: "none" }}>
+        <Button
+          disabled={valueInput ? false : true}
+          className="button button-next"
+          color="primary"
+          variant="contained"
+        >
+          Vamos lá
+        </Button>
+      </Link>
     </div>
   );
   return (
