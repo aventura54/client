@@ -39,7 +39,7 @@ ReactDOM.render(
           <Route path="/quanto-investir" component={QuantoInvestir} />
           <Route path="/slider-investimento" component={SliderPage} />
           <Route path="/organizacao" component={OrganizacaoPage} />
-          <Route path="/assinatura" component={Assinatura} />
+          <Route path="/planos" component={Assinatura} />
           <Route path="/" component={LandingPage} />
         </Switch>
       </Router>
