@@ -19,7 +19,6 @@ const LandingPage = () => {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-  console.log('testing heroku');
 
   return (
     <>
