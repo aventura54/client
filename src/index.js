@@ -9,6 +9,7 @@ import FeedPage from "./pages/FeedPage/FeedPage";
 import PlanilhaPage from "./pages/PlanilhaPage/PlanilhaPage";
 import QuantoInvestir from "./pages/OrganizacaoPage/QuantoInvestir/QuantoInvestir";
 import SliderPage from "./pages/OrganizacaoPage/Slider-page/Slider-page";
+import FinalizarAssinaturaPage from "./pages/FinalizarAssinaturaPage/FinalizarAssinaturaPage";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
@@ -35,7 +36,7 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <Router>
         <Switch>
-          <Route path="/quanto-investir" component={QuantoInvestir} />
+          <Route path="/assinatura" component={FinalizarAssinaturaPage} />
           <Route path="/feed" component={FeedPage} />
           <Route path="/planilha" component={PlanilhaPage} />
           <Route path="/quanto-investir" component={QuantoInvestir} />
