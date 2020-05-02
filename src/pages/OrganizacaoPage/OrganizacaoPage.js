@@ -14,9 +14,11 @@ import "./OrganizacaoPage.scss";
 
 const renderIcon = () => (
   <div className="section-icon">
-    <IconButton>
-      <BackIcon className="back-icon" />
-    </IconButton>
+    <Link to="/" style={{ textDecoration: "none", width: "100%" }}>
+      <IconButton>
+        <BackIcon className="back-icon" />
+      </IconButton>
+    </Link>
   </div>
 );
 
@@ -62,9 +64,7 @@ const OrganizacaoPage = () => {
           className="organizacao-container"
           container
         >
-          <Link to="/" style={{ textDecoration: "none", width: "100%" }}>
-            {renderIcon()}
-          </Link>
+          {renderIcon()}
           {renderContent()}
           {renderButtons()}
         </Grid>
