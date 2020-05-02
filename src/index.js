@@ -5,7 +5,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import LandingPage from "./pages/LandingPage/LandingPage";
 import OrganizacaoPage from "./pages/OrganizacaoPage/OrganizacaoPage";
+<<<<<<< HEAD
 import QuantoInvestir from "./pages/OrganizacaoPage/QuantoInvestir/QuantoInvestir";
+=======
+import FeedPage from "./pages/FeedPage/FeedPage";
+>>>>>>> feature/feed
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
@@ -32,7 +36,11 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <Router>
         <Switch>
+<<<<<<< HEAD
           <Route path="/quanto-investir" component={QuantoInvestir} />
+=======
+          <Route path="/feed" component={FeedPage} />
+>>>>>>> feature/feed
           <Route path="/organizacao" component={OrganizacaoPage} />
           <Route path="/" component={LandingPage} />
         </Switch>
