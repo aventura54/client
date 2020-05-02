@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import OrganizacaoPage from "./pages/OrganizacaoPage/OrganizacaoPage";
 import PlanilhaPage from "./pages/PlanilhaPage/PlanilhaPage";
+import QuantoInvestir from "./pages/OrganizacaoPage/QuantoInvestir/QuantoInvestir";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
@@ -33,6 +34,7 @@ ReactDOM.render(
       <Router>
         <Switch>
           <Route path="/planilha" component={PlanilhaPage} />
+          <Route path="/quanto-investir" component={QuantoInvestir} />
           <Route path="/organizacao" component={OrganizacaoPage} />
           <Route path="/" component={LandingPage} />
         </Switch>
