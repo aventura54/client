@@ -8,6 +8,7 @@ import OrganizacaoPage from "./pages/OrganizacaoPage/OrganizacaoPage";
 import PlanilhaPage from "./pages/PlanilhaPage/PlanilhaPage";
 import QuantoInvestir from "./pages/OrganizacaoPage/QuantoInvestir/QuantoInvestir";
 import SliderPage from "./pages/OrganizacaoPage/Slider-page/Slider-page";
+import Assinatura from "./pages/OrganizacaoPage/Assinatura/Assinatura";
 
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
@@ -38,6 +39,7 @@ ReactDOM.render(
           <Route path="/quanto-investir" component={QuantoInvestir} />
           <Route path="/slider-investimento" component={SliderPage} />
           <Route path="/organizacao" component={OrganizacaoPage} />
+          <Route path="/assinatura" component={Assinatura} />
           <Route path="/" component={LandingPage} />
         </Switch>
       </Router>

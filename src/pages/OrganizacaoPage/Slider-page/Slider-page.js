@@ -91,13 +91,15 @@ const QuantoInvestir = () => {
           Agora não
         </Button>
       </Link>
-      <Button
-        className="button button-next"
-        color="primary"
-        variant="contained"
-      >
-        Vamos lá
-      </Button>
+      <Link to="/assinatura" style={{ textDecoration: "none" }}>
+        <Button
+          className="button button-next"
+          color="primary"
+          variant="contained"
+        >
+          Vamos lá
+        </Button>
+      </Link>
     </div>
   );
   return (
