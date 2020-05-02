@@ -1,0 +1,47 @@
+.logo-item {
+  max-width: 130px;
+}
+
+.rootFeed {
+  display: "flex";
+}
+
+.menuButtonFeed {
+  margin-right: 8px;
+}
+// necessary for content to be below app bar
+.toolbarFeed {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8px;
+  min-height: 64px;
+}
+.drawerPaperFeed {
+  width: 240px;
+  background-color: "#695F5F";
+  color: "white";
+}
+.drawerIconFeed {
+  color: "white";
+}
+.contentFeed {
+  flex-grow: 1;
+  padding: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .menuButtonFeed {
+    margin-right: 8px;
+    display: "none";
+  }
+  .appBarFeed {
+    width: calc(100% - 240px);
+    margin-left: 240px;
+    background-color: red($color: #000000);
+  }
+  .drawerFeed {
+    width: 240px;
+    flex-shrink: 0;
+  }
+}
