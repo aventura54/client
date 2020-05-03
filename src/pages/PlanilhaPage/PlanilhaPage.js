@@ -17,8 +17,8 @@ import "./PlanilhaPage.scss";
 export default class PlanilhaPage extends React.Component {
 
   state = {
-    listRendas: [],
-    listGastos: [],
+    listRendas: JSON.parse(localStorage.getItem('listRendas')) || [],
+    listGastos: JSON.parse(localStorage.getItem('listGastos')) || [],
     inputRendaTipo: null,
     inputRendaValor: null,
     inputGastoTipo: null,
@@ -118,20 +118,24 @@ export default class PlanilhaPage extends React.Component {
                 return;
               }
 
+              const newListRendas = [
+                ...this.state.listRendas,
+                {
+                  id: Date.now(),
+                  tipo: rendaTipo,
+                  valor: rendaValor
+                }
+              ];
+
               this.setState({
                 ...this.state,
-                listRendas: [
-                  ...this.state.listRendas,
-                  {
-                    id: Date.now(),
-                    tipo: rendaTipo,
-                    valor: rendaValor
-                  }
-                ],
+                listRendas: newListRendas,
                 inputRendaTipo: null,
                 inputRendaValor: null,
                 isNovaRendaVisible: false
               })
+
+              localStorage.setItem('listRendas', JSON.stringify(newListRendas));
             }}
           />
         </IconButton>
@@ -225,20 +229,24 @@ export default class PlanilhaPage extends React.Component {
                 return;
               }
 
+              const newListGastos = [
+                ...this.state.listGastos,
+                {
+                  id: Date.now(),
+                  tipo: gastoTipo,
+                  valor: gastoValor
+                }
+              ];
+
               this.setState({
                 ...this.state,
-                listGastos: [
-                  ...this.state.listGastos,
-                  {
-                    id: Date.now(),
-                    tipo: gastoTipo,
-                    valor: gastoValor
-                  }
-                ],
+                listGastos: newListGastos,
                 inputGastoTipo: null,
                 inputGastoValor: null,
                 isNovoGastoVisible: false
               })
+
+              localStorage.setItem('listGastos', JSON.stringify(newListGastos));
             }}
           />
         </IconButton>
