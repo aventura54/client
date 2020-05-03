@@ -190,7 +190,7 @@ const LandingPage = () => {
                     <Typography variant="span" className="badge">
                       2.
                     </Typography>
-                    Crie sua conta e defina seu perfil
+                    Converse com nossos especialistas
                   </strong>
                 </Typography>
                 <Typography variant="h3">
@@ -198,7 +198,7 @@ const LandingPage = () => {
                     <Typography variant="span" className="badge">
                       3.
                     </Typography>
-                    Crie sua conta e defina seu perfil
+                    Invista e acompanhe os lucros
                   </strong>
                 </Typography>
               </div>
@@ -223,35 +223,23 @@ const LandingPage = () => {
               <Grid xs={12} sm={12} md={4} className="grid-card">
                 <div className="card">
                   <Typography variant="h3">
-                    <strong>GRÁTIS</strong>
+                    <strong>R$ 25,00</strong>
                   </Typography>
                   <Divider />
                   <Typography variant="h5">
-                    <strong>dslad aslkdjas ldjsaldj</strong>
-                  </Typography>
-                  <Typography variant="h5" style={{ color: "#979797" }}>
-                    <strong>dslad aslkdjas ldjsaldj</strong>
-                  </Typography>
-                  <Typography variant="h5" style={{ color: "#979797" }}>
-                    <strong>dslad aslkdjas ldjsaldj</strong>
-                  </Typography>
-                  <Divider />
-                </div>
-              </Grid>
-              <Grid xs={12} sm={12} md={4} className="grid-card">
-                <div className="card">
-                  <Typography variant="h3">
-                    <strong>R$ 49,90</strong>
-                  </Typography>
-                  <Divider />
-                  <Typography variant="h5">
-                    <strong>dslad aslkdjas ldjsaldj</strong>
+                    <strong>Planilha de gastos</strong>
                   </Typography>
                   <Typography variant="h5">
-                    <strong>dslad aslkdjas ldjsaldj</strong>
+                    <strong>News letter</strong>
+                  </Typography>
+                  <Typography variant="h5">
+                    <strong>Indicação de investimento pré-fixados</strong>
                   </Typography>
                   <Typography variant="h5" style={{ color: "#979797" }}>
-                    <strong>dslad aslkdjas ldjsaldj</strong>
+                    <strong>Indicação de ações</strong>
+                  </Typography>
+                  <Typography variant="h5" style={{ color: "#979797" }}>
+                    <strong>Consultoria financeira especializada</strong>
                   </Typography>
                   <Divider />
                   <Button
@@ -266,17 +254,54 @@ const LandingPage = () => {
               <Grid xs={12} sm={12} md={4} className="grid-card">
                 <div className="card">
                   <Typography variant="h3">
-                    <strong>R$ 79,90</strong>
+                    <strong>R$ 50,00</strong>
                   </Typography>
                   <Divider />
                   <Typography variant="h5">
-                    <strong>dslad aslkdjas ldjsaldj</strong>
+                    <strong>Planilha de gastos</strong>
                   </Typography>
                   <Typography variant="h5">
-                    <strong>dslad aslkdjas ldjsaldj</strong>
+                    <strong>News letter</strong>
                   </Typography>
                   <Typography variant="h5">
-                    <strong>dslad aslkdjas ldjsaldj</strong>
+                    <strong>Indicação de investimento pré-fixados</strong>
+                  </Typography>
+                  <Typography variant="h5">
+                    <strong>Indicação de ações</strong>
+                  </Typography>
+                  <Typography variant="h5" style={{ color: "#979797" }}>
+                    <strong>Consultoria financeira especializada</strong>
+                  </Typography>
+                  <Divider />
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    endIcon={<Icon>keyboard_arrow_right</Icon>}
+                  >
+                    Assinar
+                  </Button>
+                </div>
+              </Grid>
+              <Grid xs={12} sm={12} md={4} className="grid-card">
+                <div className="card">
+                  <Typography variant="h3">
+                    <strong>R$ 130,00</strong>
+                  </Typography>
+                  <Divider />
+                  <Typography variant="h5">
+                    <strong>Planilha de gastos</strong>
+                  </Typography>
+                  <Typography variant="h5">
+                    <strong>News letter</strong>
+                  </Typography>
+                  <Typography variant="h5">
+                    <strong>Indicação de investimento pré-fixados</strong>
+                  </Typography>
+                  <Typography variant="h5">
+                    <strong>Indicação de ações</strong>
+                  </Typography>
+                  <Typography variant="h5">
+                    <strong>Consultoria financeira especializada</strong>
                   </Typography>
                   <Divider />
                   <Button

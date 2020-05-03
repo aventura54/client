@@ -24,7 +24,7 @@ const Assinatura = () => {
   const [selecionado, setSelecionado] = React.useState(false);
   const renderContent = () => (
     <div className="section-content-planos">
-      <Typography className="title" variant="h1">
+      <Typography className="title" variant="h3">
         hora de escolher seu plano de assinatura!
       </Typography>
       <div
@@ -39,19 +39,32 @@ const Assinatura = () => {
           <Grid xs={12} sm={12} md={4} className="grid-card">
             <div className="card">
               <Typography variant="h3">
-                <strong>GRÁTIS</strong>
+                <strong>R$ 25,00</strong>
               </Typography>
               <Divider />
               <Typography variant="h5">
-                <strong>dslad aslkdjas ldjsaldj</strong>
+                <strong>Planilha de gastos</strong>
+              </Typography>
+              <Typography variant="h5">
+                <strong>News letter</strong>
+              </Typography>
+              <Typography variant="h5">
+                <strong>Indicação de investimento pré-fixados</strong>
               </Typography>
               <Typography variant="h5" style={{ color: "#979797" }}>
-                <strong>dslad aslkdjas ldjsaldj</strong>
+                <strong>Indicação de ações</strong>
               </Typography>
               <Typography variant="h5" style={{ color: "#979797" }}>
-                <strong>dslad aslkdjas ldjsaldj</strong>
+                <strong>Consultoria financeira especializada</strong>
               </Typography>
               <Divider />
+              <Button
+                variant="contained"
+                color="primary"
+                endIcon={<Icon>keyboard_arrow_right</Icon>}
+              >
+                Assinar
+              </Button>
             </div>
           </Grid>
           <Grid xs={12} sm={12} md={4} className="grid-card">
@@ -60,17 +73,23 @@ const Assinatura = () => {
                 <span>seu plano</span>
               </div>
               <Typography variant="h3">
-                <strong>R$ 49,90</strong>
+                <strong>R$ 50,00</strong>
               </Typography>
               <Divider />
               <Typography variant="h5">
-                <strong>dslad aslkdjas ldjsaldj</strong>
+                <strong>Planilha de gastos</strong>
               </Typography>
               <Typography variant="h5">
-                <strong>dslad aslkdjas ldjsaldj</strong>
+                <strong>News letter</strong>
+              </Typography>
+              <Typography variant="h5">
+                <strong>Indicação de investimento pré-fixados</strong>
+              </Typography>
+              <Typography variant="h5">
+                <strong>Indicação de ações</strong>
               </Typography>
               <Typography variant="h5" style={{ color: "#979797" }}>
-                <strong>dslad aslkdjas ldjsaldj</strong>
+                <strong>Consultoria financeira especializada</strong>
               </Typography>
               <Divider />
               <Button
@@ -87,17 +106,23 @@ const Assinatura = () => {
           <Grid xs={12} sm={12} md={4} className="grid-card">
             <div className="card">
               <Typography variant="h3">
-                <strong>R$ 79,90</strong>
+                <strong>R$ 130,00</strong>
               </Typography>
               <Divider />
               <Typography variant="h5">
-                <strong>dslad aslkdjas ldjsaldj</strong>
+                <strong>Planilha de gastos</strong>
               </Typography>
               <Typography variant="h5">
-                <strong>dslad aslkdjas ldjsaldj</strong>
+                <strong>News letter</strong>
               </Typography>
               <Typography variant="h5">
-                <strong>dslad aslkdjas ldjsaldj</strong>
+                <strong>Indicação de investimento pré-fixados</strong>
+              </Typography>
+              <Typography variant="h5">
+                <strong>Indicação de ações</strong>
+              </Typography>
+              <Typography variant="h5">
+                <strong>Consultoria financeira especializada</strong>
               </Typography>
               <Divider />
               <Button
@@ -105,7 +130,7 @@ const Assinatura = () => {
                 color="primary"
                 endIcon={<Icon>keyboard_arrow_right</Icon>}
               >
-                Selecionar
+                Assinar
               </Button>
             </div>
           </Grid>
