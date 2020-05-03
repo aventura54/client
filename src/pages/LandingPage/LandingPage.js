@@ -235,10 +235,16 @@ const LandingPage = () => {
                   <Typography variant="h5">
                     <strong>Indicação de investimento pré-fixados</strong>
                   </Typography>
-                  <Typography variant="h5" style={{ color: "#979797" }}>
+                  <Typography
+                    variant="h5"
+                    style={{ color: "#979797", textDecoration: "line-through" }}
+                  >
                     <strong>Indicação de ações</strong>
                   </Typography>
-                  <Typography variant="h5" style={{ color: "#979797" }}>
+                  <Typography
+                    variant="h5"
+                    style={{ color: "#979797", textDecoration: "line-through" }}
+                  >
                     <strong>Consultoria financeira especializada</strong>
                   </Typography>
                   <Divider />
@@ -269,7 +275,10 @@ const LandingPage = () => {
                   <Typography variant="h5">
                     <strong>Indicação de ações</strong>
                   </Typography>
-                  <Typography variant="h5" style={{ color: "#979797" }}>
+                  <Typography
+                    variant="h5"
+                    style={{ color: "#979797", textDecoration: "line-through" }}
+                  >
                     <strong>Consultoria financeira especializada</strong>
                   </Typography>
                   <Divider />
