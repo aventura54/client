@@ -19,6 +19,7 @@ export default class PlanilhaPage extends React.Component {
   state = {
     listRendas: JSON.parse(localStorage.getItem('listRendas')) || [],
     listGastos: JSON.parse(localStorage.getItem('listGastos')) || [],
+    quantoSobra: 0,
     inputRendaTipo: null,
     inputRendaValor: null,
     inputGastoTipo: null,
@@ -27,20 +28,34 @@ export default class PlanilhaPage extends React.Component {
     isNovoGastoVisible: false,
   }
 
+  componentDidMount() {
+    this.setState({
+      ...this.state,
+      quantoSobra: this.calculaQuantoSobra(this.state.listRendas, this.state.listGastos)
+    });
+  }
+
+  calculaQuantoSobra(rendas, gastos) {
+    const totalRenda = rendas.reduce((accum, renda) => accum + Number(renda.valor), 0);
+    const totalGastos = gastos.reduce((accum, gasto) => accum + Number(gasto.valor), 0);
+
+    return totalRenda - totalGastos;
+  }
+
   renderIcon = () => (
-    <div className="section-icon">
+    <Grid item sm={12} className="section-icon">
       <Link to="/" style={{ textDecoration: "none", width: "100%" }}>
         <BackIcon className="back-icon" />
       </Link>
-    </div>
+    </Grid>
   );
 
   renderHeader = () => (
-    <div className="section-header">
+    <Grid item sm={12} className="section-header">
       <Typography className="title" variant="h2">
         hora de registrar as suas rendas e gastos!
       </Typography>
-    </div>
+    </Grid>
   );
 
   /**
@@ -132,7 +147,8 @@ export default class PlanilhaPage extends React.Component {
                 listRendas: newListRendas,
                 inputRendaTipo: null,
                 inputRendaValor: null,
-                isNovaRendaVisible: false
+                isNovaRendaVisible: false,
+                quantoSobra: this.calculaQuantoSobra(newListRendas, this.state.listGastos)
               })
 
               localStorage.setItem('listRendas', JSON.stringify(newListRendas));
@@ -144,14 +160,14 @@ export default class PlanilhaPage extends React.Component {
   }
 
   renderSectionRendas = () => (
-    <div className="section-minhas-rendas">
+    <Grid item sm={6} className="section-minhas-rendas">
       <Typography className="title" variant="h4">
         minhas rendas (mensal)
       </Typography>
       {this.renderMinhasRendas()}
       {this.renderNovaRenda()}
       <Button id="adicionar-renda" color="primary" onClick={() => this.setState({ ...this.state, isNovaRendaVisible: true })}>Adicionar +</Button>
-    </div>
+    </Grid>
   );
 
   /**
@@ -243,7 +259,8 @@ export default class PlanilhaPage extends React.Component {
                 listGastos: newListGastos,
                 inputGastoTipo: null,
                 inputGastoValor: null,
-                isNovoGastoVisible: false
+                isNovoGastoVisible: false,
+                quantoSobra: this.calculaQuantoSobra(this.state.listRendas, newListGastos)
               })
 
               localStorage.setItem('listGastos', JSON.stringify(newListGastos));
@@ -255,18 +272,18 @@ export default class PlanilhaPage extends React.Component {
   }
 
   renderSectionGastos = () => (
-    <div className="section-meus-gastos">
+    <Grid item sm={6} className="section-meus-gastos">
       <Typography className="title" variant="h4">
         meus gastos (mensal)
       </Typography>
       {this.renderMeusGastos()}
       {this.renderNovoGasto()}
       <Button id="adicionar-gasto" color="primary" onClick={() => this.setState({ ...this.state, isNovoGastoVisible: true })}>Adicionar +</Button>
-    </div>
+    </Grid>
   );
 
   renderButtons = () => (
-    <div className="section-buttons">
+    <Grid item sm={12} className="section-buttons">
       <Link to="/quanto-investir" style={{ textDecoration: "none" }}>
         <Button
           className="button button-exit"
@@ -282,8 +299,25 @@ export default class PlanilhaPage extends React.Component {
           Próximo
       </Button>
       </Link>
-    </div>
+    </Grid>
   );
+
+  /**
+   * TOTAL
+   */
+
+  renderSectionTotal = () => {
+    return (
+      <Grid item sm={6} className="section-total">
+        <Typography className="title" variant="h4">
+          quanto sobra no mês
+        </Typography>
+        <Typography id="valor-total" variant="text">
+          R$ {this.state.quantoSobra}
+        </Typography>
+      </Grid>
+    );
+  }
 
   render() {
 
@@ -294,14 +328,13 @@ export default class PlanilhaPage extends React.Component {
         <LinearProgress variant="buffer" value={34} valueBuffer={100} />
         <Container>
           <Grid
-            direction="column"
-            justify="space-evenly"
             className="planilha-container"
             container
           >
             {this.renderIcon()}
             {this.renderHeader()}
             {this.renderSectionRendas()}
+            {this.renderSectionTotal()}
             {this.renderSectionGastos()}
             {this.renderButtons()}
           </Grid>
