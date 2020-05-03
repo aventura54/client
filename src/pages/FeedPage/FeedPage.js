@@ -136,13 +136,13 @@ function FeedPage(props) {
         />
       </ListItem>
       <ListItem button>
-        <ListItemText primary="Ações" />
+        <ListItemText primary="Mercado Financeiro" />
       </ListItem>
       <List>
         {[
-          "Mercado financeiro",
-          "Renda fixa",
-          "Renda variavel",
+          "Ações",
+          "Renda Fixa",
+          "Renda Variavel",
           "Categoria 1",
           "Categoria 2",
           "Categoria 3",
@@ -174,7 +174,7 @@ function FeedPage(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Ações
+            Mercado Financeiro
           </Typography>
         </Toolbar>
       </AppBar>
