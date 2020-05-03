@@ -91,7 +91,7 @@ const QuantoInvestir = () => {
           Agora não
         </Button>
       </Link>
-      <Link to="/assinatura" style={{ textDecoration: "none" }}>
+      <Link to="/planos" style={{ textDecoration: "none" }}>
         <Button
           className="button button-next"
           color="primary"
