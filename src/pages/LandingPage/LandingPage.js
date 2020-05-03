@@ -101,9 +101,9 @@ const LandingPage = () => {
                       <strong>Todos os meses</strong>
                     </Typography>
                     <Typography variant="h4">
-                      Você paga uma mensalidade e recebe um pack de ações e
-                      também a nossa revista virtual elaborada por
-                      especialistas.
+                      Você paga a mensalidade e recebe sugestões de
+                      investimentos, além de ter acesso a nossa revista virtual
+                      elaborada por especialistas.
                     </Typography>
                   </div>
                 </Grid>

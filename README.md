@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Futurus - Desafio Flourish MegaHack
 
-## Available Scripts
+O nosso projeto consiste em criar uma aplicação voltada à educação financeira para incentivar jovens adultos a procurarem meios de investir na sua saúde e independência financeira através de um clube de assinatura.
 
-In the project directory, you can run:
+A aplicação será dividida em duas principais funcionalidades, são elas:
+
+- Proporcionar meios do usuário dar os seus primeiros passos no mundo dos investimentos, proporcionando um **"clube de assinatura de ações"**, mesclando rendimentos pré-fixados com renda variável. Uma vez que tivermos o perfil do usuário sendo traçado no primeiro acesso dentro da aplicação, será possível entender se estamos lidando com uma pessoa que tem um perfil mais conservador ou mais ambicioso, e a partir disso oferecer diferentes ações e investimentos diferentes a cada mês. Esse modelo de negócio de clube de assinaturas têm se mostrado um modelo de negócio cada vez mais difundido e aprovado, podemos ver isso em produtos como clubes do livro, clube de vinho, clube de cerveja, entre outros.
+  Sempre explicando de modo detalhado qual ponto positivo e negativo de cada tipo de investimento, tentando conciliar um material didático e ao mesmo tempo que não seja maçante. Trazendo sempre dicas e métodos para poupar dinheiro e se reeducar financeiramente.
+
+- Permitir o usuário efetuar o cadastro, informando as suas informações básicas para que possamos entender o perfil dele, quais as suas metas iniciando nessa vida de planejamento financeiro (estudos, pagamento de dívidas, viagens, etc), e entender qual a sua situação financeira atual.
+
+## Script disponível
+
+No diretório do projeto você pode executar o seguinte comando
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Executa a aplicação em modo de desenvolvimento .<br />
+Abra [http://localhost:3000](http://localhost:3000) para visualizar no seu navegador.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Desenvolvido por
 
-### `npm test`
+### [Danilo Scavassa](https://www.linkedin.com/in/danilo-scavassa-6b7b90b9/)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### [Deni Junior](https://www.linkedin.com/in/denidiasjr/)
 
-### `npm run build`
+### [Lucas Lacava](https://www.linkedin.com/in/lucaslacava/)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### [Matheus Evers](https://www.linkedin.com/in/eversmth/)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### [Vinicius Borges](https://www.linkedin.com/in/viniciusborgesmoraes/)
